@@ -23,4 +23,8 @@
         drag = False 'Sets drag to false, so the form does not move according to the code in MouseMove
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        InstallSoftware.Show()
+        Me.Hide()
+    End Sub
 End Class

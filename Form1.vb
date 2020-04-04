@@ -23,28 +23,25 @@ Public Class Form1
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         Timer2.Enabled = False
         Timer2.Stop()
-        Timer3.Enabled = True
-        Timer3.Start()
+
         PictureBox3.Visible = True
         Label4.Visible = True
         'InstallSpiceworks.Enabled = True
         'InstallSpiceworks.Start()
         Label8.Text = "Timer2"
+        Timer3.Enabled = True
+        Timer3.Start()
     End Sub
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
         Timer3.Enabled = False
         Timer3.Stop()
-        Timer4.Enabled = True
-        Timer4.Start()
         PictureBox4.Visible = True
         Label5.Visible = True
         Label9.Text = "Timer3"
-        Thread.Sleep(2000)
-        PictureBox5.Visible = True
-        Label6.Visible = True
-        InstallSpiceworks.Enabled = True
-        InstallSpiceworks.Start()
+        Timer4.Enabled = True
+        Timer4.Start()
+
     End Sub
 
     Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles Timer5.Tick
@@ -52,16 +49,19 @@ Public Class Form1
         Timer5.Stop()
 
         Label11.Text = "Timer5"
-        Thread.Sleep(3000)
+
+        PictureBox5.Visible = True
+        Label6.Visible = True
+
         Main.Show()
         Me.Hide()
-
-        timerrunning = False
     End Sub
 
     Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
         Timer4.Enabled = False
         Timer4.Stop()
+        PictureBox5.Visible = True
+        Label6.Visible = True
         PictureBox4.Visible = True
         Label5.Visible = True
         Timer5.Enabled = True
@@ -246,11 +246,7 @@ Public Class Form1
 
             SpiceworksInstalled = True
 
-            PictureBox5.Visible = True
-            Label6.Visible = True
-            Thread.Sleep(1000)
-            Main.Show()
-            Me.Hide()
+
 
         Catch ex As Exception
             MsgBox("Can't download file")
