@@ -169,6 +169,7 @@
     <None Include="Resources\CheckMate1.png" />
     <None Include="Resources\software.png" />
     <None Include="Resources\CD-Rom Drive.png" />
+    <None Include="Resources\ModernXP-74-Software-Install-icon.png" />
     <Content Include="Resources\White Checkmark.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
