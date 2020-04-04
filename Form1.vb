@@ -17,7 +17,7 @@ Public Class Form1
         GetWindowsOSVersion()
         GetWindowsOSBuildVersion()
         GetPowerBIDesktopVersion()
-        Label7.Text = ("Timer1")
+
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
@@ -28,7 +28,7 @@ Public Class Form1
         Label4.Visible = True
         'InstallSpiceworks.Enabled = True
         'InstallSpiceworks.Start()
-        Label8.Text = "Timer2"
+
         Timer3.Enabled = True
         Timer3.Start()
     End Sub
@@ -38,7 +38,6 @@ Public Class Form1
         Timer3.Stop()
         PictureBox4.Visible = True
         Label5.Visible = True
-        Label9.Text = "Timer3"
         Timer4.Enabled = True
         Timer4.Start()
 
@@ -48,7 +47,6 @@ Public Class Form1
         Timer5.Enabled = False
         Timer5.Stop()
 
-        Label11.Text = "Timer5"
 
         PictureBox5.Visible = True
         Label6.Visible = True
@@ -66,7 +64,7 @@ Public Class Form1
         Label5.Visible = True
         Timer5.Enabled = True
         Timer5.Start()
-        Label10.Text = "Timer4"
+
     End Sub
     Dim PDFCreatorVersionChecked As Boolean = False
     Dim BluebeamVersionChecked As Boolean = False
@@ -254,11 +252,7 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Label7.Text = ""
-        Label8.Text = ""
-        Label9.Text = ""
-        Label10.Text = ""
-        Label11.Text = ""
+
     End Sub
     'Declare the variables
     Dim drag As Boolean
