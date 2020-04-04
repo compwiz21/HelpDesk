@@ -167,6 +167,8 @@
     <None Include="Resources\images.png" />
     <None Include="Resources\CheckMate.png" />
     <None Include="Resources\CheckMate1.png" />
+    <None Include="Resources\software.png" />
+    <None Include="Resources\CD-Rom Drive.png" />
     <Content Include="Resources\White Checkmark.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
