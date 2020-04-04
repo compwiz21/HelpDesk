@@ -23,16 +23,28 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel11.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel11
@@ -46,6 +58,16 @@ Partial Class Main
         Me.Panel11.Size = New System.Drawing.Size(758, 100)
         Me.Panel11.TabIndex = 0
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.HelpDesk.My.Resources.Resources.CheckMate1
+        Me.PictureBox1.Location = New System.Drawing.Point(31, 23)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(69, 52)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -53,9 +75,9 @@ Partial Class Main
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(106, 32)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(475, 37)
+        Me.Label1.Size = New System.Drawing.Size(482, 37)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Let's install software you need"
+        Me.Label1.Text = "Let's Gather Some Information"
         '
         'Panel2
         '
@@ -77,33 +99,134 @@ Partial Class Main
         Me.PictureBox2.TabIndex = 0
         Me.PictureBox2.TabStop = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.HelpDesk.My.Resources.Resources.CheckMate1
-        Me.PictureBox1.Location = New System.Drawing.Point(31, 23)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(69, 52)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.Location = New System.Drawing.Point(228, 156)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(504, 30)
-        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
-        Me.ProgressBar1.TabIndex = 40
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(224, 123)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(226, 144)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(152, 20)
+        Me.Label2.Size = New System.Drawing.Size(73, 16)
         Me.Label2.TabIndex = 41
-        Me.Label2.Text = "Installing Software..."
+        Me.Label2.Text = "First Name"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(229, 164)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(174, 26)
+        Me.TextBox1.TabIndex = 0
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(437, 164)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(174, 26)
+        Me.TextBox2.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(434, 144)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(73, 16)
+        Me.Label3.TabIndex = 43
+        Me.Label3.Text = "Last Name"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(224, 121)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(122, 13)
+        Me.Label4.TabIndex = 45
+        Me.Label4.Text = "Please fill out completely"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.Location = New System.Drawing.Point(229, 226)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(174, 26)
+        Me.TextBox3.TabIndex = 2
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(226, 206)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(119, 16)
+        Me.Label5.TabIndex = 46
+        Me.Label5.Text = "JW Email Address"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(434, 206)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(124, 16)
+        Me.Label6.TabIndex = 48
+        Me.Label6.Text = "Cell Phone Number"
+        '
+        'MaskedTextBox1
+        '
+        Me.MaskedTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(437, 226)
+        Me.MaskedTextBox1.Mask = "999-999-9999"
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(174, 26)
+        Me.MaskedTextBox1.TabIndex = 3
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"})
+        Me.ComboBox1.Location = New System.Drawing.Point(229, 285)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(176, 28)
+        Me.ComboBox1.TabIndex = 4
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(227, 266)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(141, 16)
+        Me.Label7.TabIndex = 51
+        Me.Label7.Text = "Midweek Meeting Day"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.Location = New System.Drawing.Point(437, 287)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(174, 26)
+        Me.TextBox4.TabIndex = 5
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(434, 267)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(122, 16)
+        Me.Label8.TabIndex = 52
+        Me.Label8.Text = "Best Time To Call?"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(513, 347)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(98, 41)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "Next"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Main
         '
@@ -111,8 +234,20 @@ Partial Class Main
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(758, 523)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.MaskedTextBox1)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel11)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -121,9 +256,9 @@ Partial Class Main
         Me.Text = "Main"
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -133,6 +268,18 @@ Partial Class Main
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Button1 As Button
 End Class
