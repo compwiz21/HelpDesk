@@ -24,18 +24,26 @@ Partial Class InstallSoftware
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.ProgressBar2 = New System.Windows.Forms.ProgressBar()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Background_Chocolatey = New System.ComponentModel.BackgroundWorker()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Background_Bluebeam = New System.ComponentModel.BackgroundWorker()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ProgressBar3 = New System.Windows.Forms.ProgressBar()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel11.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel11
@@ -46,15 +54,25 @@ Partial Class InstallSoftware
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel11.Location = New System.Drawing.Point(0, 0)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(758, 100)
+        Me.Panel11.Size = New System.Drawing.Size(758, 102)
         Me.Panel11.TabIndex = 1
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.HelpDesk.My.Resources.Resources.ModernXP_74_Software_Install_icon
+        Me.PictureBox1.Location = New System.Drawing.Point(227, 18)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(69, 52)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(106, 32)
+        Me.Label1.Location = New System.Drawing.Point(302, 27)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(343, 29)
         Me.Label1.TabIndex = 0
@@ -64,40 +82,10 @@ Partial Class InstallSoftware
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.PictureBox2)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 100)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(200, 423)
         Me.Panel2.TabIndex = 40
-        '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.Location = New System.Drawing.Point(-15, -15)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(100, 23)
-        Me.ProgressBar1.TabIndex = 41
-        '
-        'ProgressBar2
-        '
-        Me.ProgressBar2.Location = New System.Drawing.Point(221, 146)
-        Me.ProgressBar2.Name = "ProgressBar2"
-        Me.ProgressBar2.Size = New System.Drawing.Size(347, 27)
-        Me.ProgressBar2.Style = System.Windows.Forms.ProgressBarStyle.Marquee
-        Me.ProgressBar2.TabIndex = 42
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(221, 127)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(174, 16)
-        Me.Label2.TabIndex = 43
-        Me.Label2.Text = "Installing Required Software"
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
         '
         'PictureBox2
         '
@@ -109,15 +97,80 @@ Partial Class InstallSoftware
         Me.PictureBox2.TabIndex = 0
         Me.PictureBox2.TabStop = False
         '
-        'PictureBox1
+        'Timer1
         '
-        Me.PictureBox1.Image = Global.HelpDesk.My.Resources.Resources.ModernXP_74_Software_Install_icon
-        Me.PictureBox1.Location = New System.Drawing.Point(31, 23)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(69, 52)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 2000
+        '
+        'Background_Chocolatey
+        '
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.HelpDesk.My.Resources.Resources.GreenCheckMark
+        Me.PictureBox3.Location = New System.Drawing.Point(222, 179)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(32, 22)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 45
+        Me.PictureBox3.TabStop = False
+        Me.PictureBox3.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(260, 181)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(292, 20)
+        Me.Label3.TabIndex = 44
+        Me.Label3.Text = "Downloaded Bluebeam. Now Installing..."
+        Me.Label3.Visible = False
+        '
+        'Background_Bluebeam
+        '
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.HelpDesk.My.Resources.Resources.GreenCheckMark
+        Me.PictureBox4.Location = New System.Drawing.Point(222, 224)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(32, 22)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 47
+        Me.PictureBox4.TabStop = False
+        Me.PictureBox4.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(260, 226)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(145, 20)
+        Me.Label4.TabIndex = 46
+        Me.Label4.Text = "Installed Bluebeam"
+        Me.Label4.Visible = False
+        '
+        'ProgressBar3
+        '
+        Me.ProgressBar3.Location = New System.Drawing.Point(222, 132)
+        Me.ProgressBar3.Name = "ProgressBar3"
+        Me.ProgressBar3.Size = New System.Drawing.Size(347, 23)
+        Me.ProgressBar3.TabIndex = 48
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(222, 116)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(184, 13)
+        Me.Label5.TabIndex = 49
+        Me.Label5.Text = "Downloading and Installing Bluebeam"
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 1000
         '
         'InstallSoftware
         '
@@ -125,20 +178,25 @@ Partial Class InstallSoftware
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(758, 523)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ProgressBar2)
-        Me.Controls.Add(Me.ProgressBar1)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.ProgressBar3)
+        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel11)
+        Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "InstallSoftware"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "InstallSoftware"
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -149,8 +207,14 @@ Partial Class InstallSoftware
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents ProgressBar1 As ProgressBar
-    Friend WithEvents ProgressBar2 As ProgressBar
-    Friend WithEvents Label2 As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Background_Chocolatey As System.ComponentModel.BackgroundWorker
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Background_Bluebeam As System.ComponentModel.BackgroundWorker
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents ProgressBar3 As ProgressBar
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Timer2 As Timer
 End Class

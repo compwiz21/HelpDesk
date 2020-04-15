@@ -26,8 +26,8 @@ Public Class Form1
 
         PictureBox3.Visible = True
         Label4.Visible = True
-        'InstallSpiceworks.Enabled = True
-        'InstallSpiceworks.Start()
+        InstallSpiceworks.Enabled = True
+        InstallSpiceworks.Start()
 
         Timer3.Enabled = True
         Timer3.Start()
