@@ -4,30 +4,23 @@ Imports System.Net
 
 Public Class InstallSoftware
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
         Timer1.Stop()
-        Timer1.Enabled = False
+            Timer1.Enabled = False
         InstallBluebeamVU()
+
 
     End Sub
     Sub InstallBluebeam()
-        '  RunCmd("@""%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"" -NoProfile -ExecutionPolicy Bypass -Command ""iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"" && SET ""PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin""", "", False, True)
-        Timer2.Enabled = True
-        Timer2.Start()
-        Dim Packages() As String = {"bluebeamvu"}
-        For Each p In Packages
-            RunCmd("C:\Zone6HelpDesk\BluebeamVu.exe", "", False, True)
-        Next
-        Timer2.Stop()
-        PictureBox4.Visible = True
-        Label5.Visible = True
+
+        Process.Start("C:\Zone6HelpDesk\BluebeamVu.exe")
 
     End Sub
 
-    Sub RunCmd(command As String, arguments As String, permanent As Boolean, display As Boolean)
+    Sub RunCmd(command As String)
         Try
             Dim p As Process = New Process()
             Dim pi As ProcessStartInfo = New ProcessStartInfo()
-            pi.Arguments = " " + If(permanent = True, "/K", "/C") + " " + command + " " + arguments
             pi.FileName = "cmd.exe"
             pi.WindowStyle = ProcessWindowStyle.Hidden
             pi.CreateNoWindow = True
@@ -114,12 +107,12 @@ Public Class InstallSoftware
                 AddHandler client.DownloadFileCompleted, AddressOf client_DownloadCompleted
 
                 client.DownloadFileAsync(New Uri("https://downloads.bluebeam.com/software/downloads/2017.0.40/BbRevu2017.0.40_CAD.exe"), "C:\Zone6Helpdesk\BluebeamVu.exe")
-            Else
-                ProgressBar3.Value = 100
 
+            Else
+                ProgressBar3.Maximum = 100
+                ProgressBar3.Value = 100
                 PictureBox3.Visible = True
                 Label3.Visible = True
-                Timer2.Start()
                 InstallBluebeam()
             End If
 
@@ -127,27 +120,38 @@ Public Class InstallSoftware
 
         End Try
 
-
     End Sub
+    Dim CancelDownload As Boolean = False
     Private Sub client_ProgressChanged(ByVal sender As Object, ByVal e As DownloadProgressChangedEventArgs)
-        Dim bytesIn As Double = Double.Parse(e.BytesReceived.ToString())
-        Dim totalBytes As Double = Double.Parse(e.TotalBytesToReceive.ToString())
-        Dim percentage As Double = bytesIn / totalBytes * 100
+        If canceldownoad = False Then
+            Dim bytesIn As Double = Double.Parse(e.BytesReceived.ToString())
+            Dim totalBytes As Double = Double.Parse(e.TotalBytesToReceive.ToString())
+            Dim percentage As Double = bytesIn / totalBytes * 100
 
-        ProgressBar3.Value = Int32.Parse(Math.Truncate(percentage).ToString())
+            ProgressBar3.Value = Int32.Parse(Math.Truncate(percentage).ToString())
+        Else
+
+        End If
+
     End Sub
     Private Sub client_DownloadCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
         PictureBox3.Visible = True
         Label3.Visible = True
-        Timer2.Start()
         InstallBluebeam()
     End Sub
 
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        If Label5.Text = "Downloaded Bluebeam. Now Installing..." Then
-            Label5.Text = "Downloaded Bluebeam. Now Installing......"
-        Else
-            Label5.Text = "Downloaded Bluebeam. Now Installing..."
-        End If
+    Private Sub InstallSoftware_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        Timer1.Enabled = True
+        Timer1.Start()
+
+    End Sub
+
+    Private Sub InstallSoftware_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Application.Exit()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
     End Sub
 End Class

@@ -162,6 +162,11 @@
     <None Include="Resources\download.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Zone6Splash4.png" />
+    <None Include="Resources\Zone6Splash3.png" />
+    <None Include="Resources\Zone6SplashFinal.png" />
+    <None Include="Resources\Zone6FinalSplash.png" />
+    <None Include="Resources\Zone6SplashFixed.png" />
     <None Include="Resources\Zone6Splash2.png" />
     <None Include="Resources\White.png" />
     <None Include="Resources\images.png" />
@@ -170,6 +175,10 @@
     <None Include="Resources\software.png" />
     <None Include="Resources\CD-Rom Drive.png" />
     <None Include="Resources\ModernXP-74-Software-Install-icon.png" />
+    <None Include="Resources\Step1.png" />
+    <None Include="Resources\Step1-Black.png" />
+    <None Include="Resources\Step-1---Transparent.png" />
+    <None Include="Resources\Step-2.png" />
     <Content Include="Resources\White Checkmark.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

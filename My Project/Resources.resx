@@ -121,14 +121,20 @@
   <data name="CheckMate1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CheckMate1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="software" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\software.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Step1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Step1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zone6FinalSplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zone6FinalSplash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CD-Rom Drive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CD-Rom Drive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GreenCheckMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GreenCheckMark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="White Checkmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\White Checkmark.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,11 +145,23 @@
   <data name="Zone-6-Helpdesk-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Zone-6-Helpdesk-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Step1-Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Step1-Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="White" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Zone6SplashFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zone6SplashFinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Step-1---Transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Step-1---Transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Step-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Step-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zone6Splash3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zone6Splash3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ModernXP-74-Software-Install-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModernXP-74-Software-Install-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,13 +169,22 @@
   <data name="Zone6Splash2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Zone6Splash2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Zone6SplashFixed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zone6SplashFixed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Zone6Splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Zone6Splash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="All Good" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\All Good.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ModernXP-74-Software-Install-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ModernXP-74-Software-Install-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="software" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\software.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zone6Splash4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zone6Splash4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

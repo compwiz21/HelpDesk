@@ -28,7 +28,8 @@ Partial Class SplashScreen
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.HelpDesk.My.Resources.Resources.Zone6Splash
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
+        Me.PictureBox1.Image = Global.HelpDesk.My.Resources.Resources.Zone6Splash4
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(437, 279)

@@ -153,6 +153,46 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Step_1___Transparent() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Step-1---Transparent", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Step_2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Step-2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Step1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Step1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Step1_Black() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Step1-Black", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property White() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("White", resourceCulture)
@@ -183,6 +223,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Zone6FinalSplash() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Zone6FinalSplash", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Zone6Splash() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Zone6Splash", resourceCulture)
@@ -196,6 +246,46 @@ Namespace My.Resources
         Friend ReadOnly Property Zone6Splash2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Zone6Splash2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Zone6Splash3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Zone6Splash3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Zone6Splash4() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Zone6Splash4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Zone6SplashFinal() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Zone6SplashFinal", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Zone6SplashFixed() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Zone6SplashFixed", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
