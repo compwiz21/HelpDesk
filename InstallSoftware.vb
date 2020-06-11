@@ -3,24 +3,33 @@ Imports System.Net
 
 
 Public Class InstallSoftware
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-
-        Timer1.Stop()
-            Timer1.Enabled = False
-        InstallBluebeamVU()
+    Dim installstep As Integer = 1
+    Sub installChocolatey()
 
 
-    End Sub
-    Sub InstallBluebeam()
+        powershellscript = "Set-ExecutionPolicy Bypass -Scope Process -Force; iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex"
+        RunPowerShell()
 
-        Process.Start("C:\Zone6HelpDesk\BluebeamVu.exe")
 
     End Sub
 
-    Sub RunCmd(command As String)
+    Sub InstallChocoApps()
+        RunCmd("@""%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"" -NoProfile -ExecutionPolicy Bypass -Command ""iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"" && SET ""PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin""", "", False, True)
+
+        Dim Packages() As String = {"zoom", "whatsapp", "pdfcreator", "bluebeamvu", "teamviewer"}
+        For Each p In Packages
+            Background_InstallSoftware.ReportProgress(10)
+            RunCmd("choco install " & p & " --force -y --no-progress", "", False, True)
+            installstep = installstep + 1
+
+        Next
+    End Sub
+
+    Sub RunCmd(command As String, arguments As String, permanent As Boolean, display As Boolean)
         Try
             Dim p As Process = New Process()
             Dim pi As ProcessStartInfo = New ProcessStartInfo()
+            pi.Arguments = " " + If(permanent = True, "/K", "/C") + " " + command + " " + arguments
             pi.FileName = "cmd.exe"
             pi.WindowStyle = ProcessWindowStyle.Hidden
             pi.CreateNoWindow = True
@@ -38,12 +47,16 @@ Public Class InstallSoftware
 
         End Try
     End Sub
+    Dim powershellscript As String
 
-    Sub RunPowerShell(command As String, arguments As String, permanent As Boolean, display As Boolean)
+    Sub RunPowerShell()
+
+
+
         Try
             Dim p As Process = New Process()
             Dim pi As ProcessStartInfo = New ProcessStartInfo()
-            pi.Arguments = " " + If(permanent = True, "/K", "/C") + " " + command + " " + arguments
+            pi.Arguments = powershellscript
             pi.FileName = "powershell.exe"
             pi.WindowStyle = ProcessWindowStyle.Hidden
             pi.CreateNoWindow = True
@@ -60,98 +73,103 @@ Public Class InstallSoftware
         Catch ex As Exception
 
         End Try
-    End Sub
-    Private Sub InstallChocolatey()
-        RunPowerShell("Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))", "", False, True)
 
 
     End Sub
 
-    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Background_Chocolatey.DoWork
-        InstallChocolatey()
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        Background_Chocolatey.RunWorkerAsync()
     End Sub
 
-    Private Sub BackgroundWorker1_Disposed(sender As Object, e As EventArgs) Handles Background_Chocolatey.Disposed
-
+    Private Sub Background_Chocolatey_DoWork(sender As Object, e As DoWorkEventArgs) Handles Background_Chocolatey.DoWork
+        installChocolatey()
     End Sub
 
-    Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles Background_Chocolatey.RunWorkerCompleted
-        PictureBox3.Visible = True
-        Label3.Visible = True
-        InstallBluebeamVU()
-        InstallBluebeam()
-
-
-
+    Private Sub Background_Chocolatey_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles Background_Chocolatey.RunWorkerCompleted
+        Label5.Text = "Pre-Requisites installed. Now installing required software....please be patient, this can take a while."
+        prerequisitecheckbox.Checked = True
+        ProgressBar1.Location = New Point(280, 259)
+        Background_InstallSoftware.RunWorkerAsync()
     End Sub
 
-    Private Sub Background_Bluebeam_DoWork(sender As Object, e As DoWorkEventArgs) Handles Background_Bluebeam.DoWork
-        InstallBluebeamVU()
 
-    End Sub
-
-    Private Sub Background_Bluebeam_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles Background_Bluebeam.RunWorkerCompleted
-        PictureBox4.Visible = True
-        Label4.Visible = True
-    End Sub
-
-    Private Sub InstallBluebeamVU()
-        Label5.Visible = True
-        ProgressBar3.Visible = True
-        Try
-            If Not My.Computer.FileSystem.FileExists("C:\Zone6HelpDesk\BlueBeamVu.exe") Then
-                Dim client As WebClient = New WebClient
-
-                AddHandler client.DownloadProgressChanged, AddressOf client_ProgressChanged
-
-                AddHandler client.DownloadFileCompleted, AddressOf client_DownloadCompleted
-
-                client.DownloadFileAsync(New Uri("https://downloads.bluebeam.com/software/downloads/2017.0.40/BbRevu2017.0.40_CAD.exe"), "C:\Zone6Helpdesk\BluebeamVu.exe")
-
-            Else
-                ProgressBar3.Maximum = 100
-                ProgressBar3.Value = 100
-                PictureBox3.Visible = True
-                Label3.Visible = True
-                InstallBluebeam()
-            End If
-
-        Catch ex As Exception
-
-        End Try
-
-    End Sub
-    Dim CancelDownload As Boolean = False
-    Private Sub client_ProgressChanged(ByVal sender As Object, ByVal e As DownloadProgressChangedEventArgs)
-        If canceldownoad = False Then
-            Dim bytesIn As Double = Double.Parse(e.BytesReceived.ToString())
-            Dim totalBytes As Double = Double.Parse(e.TotalBytesToReceive.ToString())
-            Dim percentage As Double = bytesIn / totalBytes * 100
-
-            ProgressBar3.Value = Int32.Parse(Math.Truncate(percentage).ToString())
-        Else
-
-        End If
-
-    End Sub
-    Private Sub client_DownloadCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
-        PictureBox3.Visible = True
-        Label3.Visible = True
-        InstallBluebeam()
-    End Sub
 
     Private Sub InstallSoftware_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Label5.Text = "Installing Software"
 
-        Timer1.Enabled = True
-        Timer1.Start()
+        Background_Chocolatey.RunWorkerAsync()
+    End Sub
+
+    Private Sub Background_InstallSoftware_DoWork(sender As Object, e As DoWorkEventArgs) Handles Background_InstallSoftware.DoWork
+        InstallChocoApps()
+    End Sub
+
+    Private Sub Background_InstallSoftware_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles Background_InstallSoftware.RunWorkerCompleted
+        teamviewercheckbox.Checked = True
+        Installskype()
 
     End Sub
 
-    Private Sub InstallSoftware_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        Application.Exit()
+    Private Sub Background_InstallSoftware_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles Background_InstallSoftware.ProgressChanged
+        If installstep < 2 Then
+            zoomcheckbox.Checked = True
+            ProgressBar1.Location = New Point(306, 283)
+        Else
+            If installstep = 2 Then
+                whatsappcheckbox.Checked = True
+                ProgressBar1.Location = New Point(312, 305)
+            Else
+                If installstep = 3 Then
+                    pdfcreatorcheckbox.Checked = True
+                    ProgressBar1.Location = New Point(313, 324)
+                Else
+                    If installstep = 4 Then
+                        bluebeamvucheckbox.Checked = True
+                        ProgressBar1.Location = New Point(312, 347)
+                    Else
+                        If installstep = 5 Then
+                            teamviewercheckbox.Checked = True
+                            ProgressBar1.Location = New Point(372, 372)
+                        End If
+                    End If
+                End If
+            End If
+        End If
+
+        ProgressBar3.PerformStep()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub InstallSkype()
 
+        Dim s As String
+        s = "msiexec.exe /qn /i ""C:\Zone6HelpDesk\SkypeForBusinessPlugin.msi"""
+        Shell(s, AppWinStyle.NormalFocus)
+        ProgressBar1.Location = New Point(327, 395)
+        skypeforbusinesscheckbox.Checked = True
+        InstallIE()
+    End Sub
+    Private Sub InstallIE()
+
+        RunCmd("C:\Zone6HelpDesk\AddShortcuts.bat", "", False, True)
+        ProgressBar1.Location = New Point(376, 418)
+        ieshortcutscheckbox.Checked = True
+        UnPinEdge()
+    End Sub
+
+    Sub UnPinEdge()
+
+        Dim s As String
+        s = "powershell.exe ""C:\Zone6helpdesk\Unpin.ps1"""
+        Shell(s, AppWinStyle.NormalFocus)
+        ProgressBar1.Location = New Point(334, 441)
+        unpinedgecheckbox.Checked = True
+        PINInternetExplorer()
+    End Sub
+
+    Private Sub PINInternetExplorer()
+
+        RunCmd("C:\Zone6HelpDesk\syspin.exe ""%PROGRAMFILES%\Internet Explorer\iexplore.exe"" 5386", "", False, True)
+        Label2.Text = "IE Pinned to Taskbar."
+        pinietaskbarcheckbox.Checked = True
     End Sub
 End Class

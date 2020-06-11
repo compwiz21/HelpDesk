@@ -30,21 +30,25 @@ Partial Class InstallSoftware
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Background_Chocolatey = New System.ComponentModel.BackgroundWorker()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Background_Bluebeam = New System.ComponentModel.BackgroundWorker()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.ProgressBar3 = New System.Windows.Forms.ProgressBar()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.prerequisitecheckbox = New System.Windows.Forms.CheckBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.zoomcheckbox = New System.Windows.Forms.CheckBox()
+        Me.whatsappcheckbox = New System.Windows.Forms.CheckBox()
+        Me.pdfcreatorcheckbox = New System.Windows.Forms.CheckBox()
+        Me.bluebeamvucheckbox = New System.Windows.Forms.CheckBox()
+        Me.ieshortcutscheckbox = New System.Windows.Forms.CheckBox()
+        Me.unpinedgecheckbox = New System.Windows.Forms.CheckBox()
+        Me.pinietaskbarcheckbox = New System.Windows.Forms.CheckBox()
+        Me.skypeforbusinesscheckbox = New System.Windows.Forms.CheckBox()
+        Me.teamviewercheckbox = New System.Windows.Forms.CheckBox()
+        Me.Background_InstallSoftware = New System.ComponentModel.BackgroundWorker()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Panel11.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel11
@@ -107,86 +111,156 @@ Partial Class InstallSoftware
         'Background_Chocolatey
         '
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(260, 200)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(292, 20)
-        Me.Label3.TabIndex = 44
-        Me.Label3.Text = "Downloaded Bluebeam. Now Installing..."
-        Me.Label3.Visible = False
-        '
-        'Background_Bluebeam
-        '
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(260, 245)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(145, 20)
-        Me.Label4.TabIndex = 46
-        Me.Label4.Text = "Installed Bluebeam"
-        Me.Label4.Visible = False
-        '
         'ProgressBar3
         '
-        Me.ProgressBar3.Location = New System.Drawing.Point(222, 151)
+        Me.ProgressBar3.ForeColor = System.Drawing.Color.Purple
+        Me.ProgressBar3.Location = New System.Drawing.Point(222, 179)
         Me.ProgressBar3.Name = "ProgressBar3"
-        Me.ProgressBar3.Size = New System.Drawing.Size(347, 23)
+        Me.ProgressBar3.Size = New System.Drawing.Size(498, 23)
+        Me.ProgressBar3.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar3.TabIndex = 48
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(222, 135)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(184, 13)
-        Me.Label5.TabIndex = 49
-        Me.Label5.Text = "Downloading and Installing Bluebeam"
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.HelpDesk.My.Resources.Resources.GreenCheckMark
-        Me.PictureBox4.Location = New System.Drawing.Point(222, 243)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(32, 22)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 47
-        Me.PictureBox4.TabStop = False
-        Me.PictureBox4.Visible = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.HelpDesk.My.Resources.Resources.GreenCheckMark
-        Me.PictureBox3.Location = New System.Drawing.Point(222, 198)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(32, 22)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 45
-        Me.PictureBox3.TabStop = False
-        Me.PictureBox3.Visible = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(219, 115)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(189, 13)
         Me.Label2.TabIndex = 50
         Me.Label2.Text = "*Approximately 2 GB of data required..."
         '
-        'Button1
+        'prerequisitecheckbox
         '
-        Me.Button1.Location = New System.Drawing.Point(575, 151)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(134, 23)
-        Me.Button1.TabIndex = 51
-        Me.Button1.Text = "Cancel Download"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.prerequisitecheckbox.AutoSize = True
+        Me.prerequisitecheckbox.Enabled = False
+        Me.prerequisitecheckbox.Location = New System.Drawing.Point(222, 233)
+        Me.prerequisitecheckbox.Name = "prerequisitecheckbox"
+        Me.prerequisitecheckbox.Size = New System.Drawing.Size(94, 17)
+        Me.prerequisitecheckbox.TabIndex = 51
+        Me.prerequisitecheckbox.Text = "Pre-Requisites"
+        Me.prerequisitecheckbox.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(222, 145)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(119, 13)
+        Me.Label5.TabIndex = 49
+        Me.Label5.Text = "Installing Pre-Requisites"
+        '
+        'zoomcheckbox
+        '
+        Me.zoomcheckbox.AutoSize = True
+        Me.zoomcheckbox.Enabled = False
+        Me.zoomcheckbox.Location = New System.Drawing.Point(222, 257)
+        Me.zoomcheckbox.Name = "zoomcheckbox"
+        Me.zoomcheckbox.Size = New System.Drawing.Size(53, 17)
+        Me.zoomcheckbox.TabIndex = 52
+        Me.zoomcheckbox.Text = "Zoom"
+        Me.zoomcheckbox.UseVisualStyleBackColor = True
+        '
+        'whatsappcheckbox
+        '
+        Me.whatsappcheckbox.AutoSize = True
+        Me.whatsappcheckbox.Enabled = False
+        Me.whatsappcheckbox.Location = New System.Drawing.Point(222, 280)
+        Me.whatsappcheckbox.Name = "whatsappcheckbox"
+        Me.whatsappcheckbox.Size = New System.Drawing.Size(81, 17)
+        Me.whatsappcheckbox.TabIndex = 53
+        Me.whatsappcheckbox.Text = "What's App"
+        Me.whatsappcheckbox.UseVisualStyleBackColor = True
+        '
+        'pdfcreatorcheckbox
+        '
+        Me.pdfcreatorcheckbox.AutoSize = True
+        Me.pdfcreatorcheckbox.Enabled = False
+        Me.pdfcreatorcheckbox.Location = New System.Drawing.Point(222, 303)
+        Me.pdfcreatorcheckbox.Name = "pdfcreatorcheckbox"
+        Me.pdfcreatorcheckbox.Size = New System.Drawing.Size(84, 17)
+        Me.pdfcreatorcheckbox.TabIndex = 54
+        Me.pdfcreatorcheckbox.Text = "PDF Creator"
+        Me.pdfcreatorcheckbox.UseVisualStyleBackColor = True
+        '
+        'bluebeamvucheckbox
+        '
+        Me.bluebeamvucheckbox.AutoSize = True
+        Me.bluebeamvucheckbox.Enabled = False
+        Me.bluebeamvucheckbox.Location = New System.Drawing.Point(222, 322)
+        Me.bluebeamvucheckbox.Name = "bluebeamvucheckbox"
+        Me.bluebeamvucheckbox.Size = New System.Drawing.Size(92, 17)
+        Me.bluebeamvucheckbox.TabIndex = 55
+        Me.bluebeamvucheckbox.Text = "BlueBeam VU"
+        Me.bluebeamvucheckbox.UseVisualStyleBackColor = True
+        '
+        'ieshortcutscheckbox
+        '
+        Me.ieshortcutscheckbox.AutoSize = True
+        Me.ieshortcutscheckbox.Enabled = False
+        Me.ieshortcutscheckbox.Location = New System.Drawing.Point(222, 391)
+        Me.ieshortcutscheckbox.Name = "ieshortcutscheckbox"
+        Me.ieshortcutscheckbox.Size = New System.Drawing.Size(106, 17)
+        Me.ieshortcutscheckbox.TabIndex = 57
+        Me.ieshortcutscheckbox.Text = "Add IE Shortcuts"
+        Me.ieshortcutscheckbox.UseVisualStyleBackColor = True
+        '
+        'unpinedgecheckbox
+        '
+        Me.unpinedgecheckbox.AutoSize = True
+        Me.unpinedgecheckbox.Enabled = False
+        Me.unpinedgecheckbox.Location = New System.Drawing.Point(222, 414)
+        Me.unpinedgecheckbox.Name = "unpinedgecheckbox"
+        Me.unpinedgecheckbox.Size = New System.Drawing.Size(150, 17)
+        Me.unpinedgecheckbox.TabIndex = 58
+        Me.unpinedgecheckbox.Text = "Unpin Edge From Taskbar"
+        Me.unpinedgecheckbox.UseVisualStyleBackColor = True
+        '
+        'pinietaskbarcheckbox
+        '
+        Me.pinietaskbarcheckbox.AutoSize = True
+        Me.pinietaskbarcheckbox.Enabled = False
+        Me.pinietaskbarcheckbox.Location = New System.Drawing.Point(222, 437)
+        Me.pinietaskbarcheckbox.Name = "pinietaskbarcheckbox"
+        Me.pinietaskbarcheckbox.Size = New System.Drawing.Size(108, 17)
+        Me.pinietaskbarcheckbox.TabIndex = 59
+        Me.pinietaskbarcheckbox.Text = "Pin IE to Taskbar"
+        Me.pinietaskbarcheckbox.UseVisualStyleBackColor = True
+        '
+        'skypeforbusinesscheckbox
+        '
+        Me.skypeforbusinesscheckbox.AutoSize = True
+        Me.skypeforbusinesscheckbox.Enabled = False
+        Me.skypeforbusinesscheckbox.Location = New System.Drawing.Point(222, 368)
+        Me.skypeforbusinesscheckbox.Name = "skypeforbusinesscheckbox"
+        Me.skypeforbusinesscheckbox.Size = New System.Drawing.Size(148, 17)
+        Me.skypeforbusinesscheckbox.TabIndex = 60
+        Me.skypeforbusinesscheckbox.Text = "Skype for Business Plugin"
+        Me.skypeforbusinesscheckbox.UseVisualStyleBackColor = True
+        '
+        'teamviewercheckbox
+        '
+        Me.teamviewercheckbox.AutoSize = True
+        Me.teamviewercheckbox.Enabled = False
+        Me.teamviewercheckbox.Location = New System.Drawing.Point(222, 345)
+        Me.teamviewercheckbox.Name = "teamviewercheckbox"
+        Me.teamviewercheckbox.Size = New System.Drawing.Size(84, 17)
+        Me.teamviewercheckbox.TabIndex = 61
+        Me.teamviewercheckbox.Text = "Teamviewer"
+        Me.teamviewercheckbox.UseVisualStyleBackColor = True
+        '
+        'Background_InstallSoftware
+        '
+        Me.Background_InstallSoftware.WorkerReportsProgress = True
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(318, 236)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(208, 10)
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        Me.ProgressBar1.TabIndex = 62
         '
         'InstallSoftware
         '
@@ -194,14 +268,20 @@ Partial Class InstallSoftware
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(758, 523)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.ProgressBar1)
+        Me.Controls.Add(Me.teamviewercheckbox)
+        Me.Controls.Add(Me.skypeforbusinesscheckbox)
+        Me.Controls.Add(Me.pinietaskbarcheckbox)
+        Me.Controls.Add(Me.unpinedgecheckbox)
+        Me.Controls.Add(Me.ieshortcutscheckbox)
+        Me.Controls.Add(Me.bluebeamvucheckbox)
+        Me.Controls.Add(Me.pdfcreatorcheckbox)
+        Me.Controls.Add(Me.whatsappcheckbox)
+        Me.Controls.Add(Me.zoomcheckbox)
+        Me.Controls.Add(Me.prerequisitecheckbox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.ProgressBar3)
-        Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel11)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -213,8 +293,6 @@ Partial Class InstallSoftware
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -226,14 +304,20 @@ Partial Class InstallSoftware
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Background_Chocolatey As System.ComponentModel.BackgroundWorker
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Background_Bluebeam As System.ComponentModel.BackgroundWorker
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents ProgressBar3 As ProgressBar
-    Friend WithEvents Label5 As Label
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents prerequisitecheckbox As CheckBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents zoomcheckbox As CheckBox
+    Friend WithEvents whatsappcheckbox As CheckBox
+    Friend WithEvents pdfcreatorcheckbox As CheckBox
+    Friend WithEvents bluebeamvucheckbox As CheckBox
+    Friend WithEvents ieshortcutscheckbox As CheckBox
+    Friend WithEvents unpinedgecheckbox As CheckBox
+    Friend WithEvents pinietaskbarcheckbox As CheckBox
+    Friend WithEvents skypeforbusinesscheckbox As CheckBox
+    Friend WithEvents teamviewercheckbox As CheckBox
+    Friend WithEvents Background_InstallSoftware As System.ComponentModel.BackgroundWorker
+    Friend WithEvents ProgressBar1 As ProgressBar
 End Class

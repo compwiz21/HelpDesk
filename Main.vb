@@ -1,4 +1,6 @@
-﻿Public Class Main
+﻿Imports System.Net
+
+Public Class Main
 
     'Declare the variables
     Dim drag As Boolean
@@ -27,8 +29,49 @@
         InstallSoftware.Show()
         Me.Hide()
     End Sub
+    Private Sub PreloadSoftware()
+        Label5.Visible = True
+        ProgressBar1.Visible = True
+        Try
+            If Not My.Computer.FileSystem.FileExists("C:\Zone6Helpdesk\Software.zip") Then
+                Dim client As WebClient = New WebClient
 
+                AddHandler client.DownloadProgressChanged, AddressOf client_ProgressChanged
+
+                AddHandler client.DownloadFileCompleted, AddressOf client_DownloadCompleted
+
+                client.DownloadFileAsync(New Uri("http://ldc.prestonbarnes.com/Software.zip"), "C:\Zone6Helpdesk\Software.zip")
+
+            Else
+                ProgressBar1.Maximum = 100
+                ProgressBar1.Value = 100
+                PictureBox3.Visible = True
+                Label9.Text = "Fast Internet My Friend. Preload Complete..."
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+    Dim CancelDownload As Boolean = False
+    Private Sub client_ProgressChanged(ByVal sender As Object, ByVal e As DownloadProgressChangedEventArgs)
+        Dim bytesIn As Double = Double.Parse(e.BytesReceived.ToString())
+        Dim totalBytes As Double = Double.Parse(e.TotalBytesToReceive.ToString())
+            Dim percentage As Double = bytesIn / totalBytes * 100
+
+        ProgressBar1.Value = Int32.Parse(Math.Truncate(percentage).ToString())
+
+
+    End Sub
+    Private Sub client_DownloadCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+        PictureBox3.Visible = True
+        Label9.Text = "Fast Internet My Friend. Preload Complete..."
+
+    End Sub
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PreloadSoftware()
 
     End Sub
 
